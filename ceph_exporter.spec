@@ -15,17 +15,18 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 %global import_path     code.google.com/p/go.net
+%define build_timestamp %{lua: print(os.date("%Y%m%d"))}
 
 
 Name:           golang-github-digitalocean-ceph_exporter
-Version:        1.1.0+git20171115.80aa3ff
-Release:        0
+Version:        1.1.0
+Release:        %{build_timestamp}
 License:        Apache-2.0
 Summary:        Prometheus exporter for ceph cluster metrics
 Url:            https://github.com/digitalocean/ceph_exporter
 Group:          System/Management
-Source:         ceph_exporter-%{version}.tar.gz
-Source1:        prometheus-ceph_exporter.service
+Source0:        https://github.com/digitalocean/ceph_exporter/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source1:        https://raw.githubusercontent.com/rjfd/ceph_exporter_rpm/master/prometheus-ceph_exporter.service
 BuildRequires:  librados-devel
 BuildRequires:  librbd-devel
 BuildRequires:  systemd
@@ -39,7 +40,7 @@ rados_mon_command(). Hence, no additional setup is necessary other
 than having a working ceph cluster.
 
 %prep
-%setup -q -n ceph_exporter-%{version}
+%autosetup -n ceph_exporter-%{version}
 rm -rf vendor
 
 %build
