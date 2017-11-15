@@ -7,4 +7,4 @@ repo.
 ## Build Status
 
 ### Fedora Copr
-![rpmbuild](https://copr.fedorainfracloud.org/coprs/rjdias/home/package/golang-github-digitalocean-ceph_exporter/status_image/last_build.png)
+[![rpmbuild](https://copr.fedorainfracloud.org/coprs/rjdias/home/package/golang-github-digitalocean-ceph_exporter/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/rjdias/home/builds/)
