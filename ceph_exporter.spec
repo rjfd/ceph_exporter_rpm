@@ -29,6 +29,7 @@ Source0:        https://github.com/digitalocean/ceph_exporter/archive/%{version}
 Source1:        https://raw.githubusercontent.com/rjfd/ceph_exporter_rpm/master/prometheus-ceph_exporter.service
 BuildRequires:  librados-devel
 BuildRequires:  librbd-devel
+BuildRequires:  git
 BuildRequires:  systemd
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
